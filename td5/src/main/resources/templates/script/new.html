@@ -1,0 +1,50 @@
+{{> header}}
+<div class="ui icon message" style="margin-top:20px;">
+  <i class="inbox icon"></i>
+  <div class="content">
+    <div class="header">
+      script\new
+    </div>
+    <p>Nouveau script</p>
+  </div>
+</div>
+
+<form class="ui form" method="POST" action="submit" modelAttribute="organisation">
+	<input type="hidden" name="id" value={{script.id}}>
+  <div class="field">
+    <label>Title</label>
+    <input type="text" name="title" placeholder="title..." value={{script.title}}>
+  </div>
+  <div class="field">
+    <label>Description</label>
+    <input type="text" name="description" placeholder="description..." value={{script.description}}>
+  </div>
+  <div class="field">
+    <label>Content</label>
+    <textarea type="text" name="content" placeholder="content...">{{script.content}}</textarea>
+  </div>
+  <div class="field">
+    <label>Language</label>
+    <select class="ui dropdown" name="language" required>
+        <option value="{{script.language.id}}" selected>{{script.language.name}}</option>
+    	{{#languages}}
+    	<option value="{{id}}">{{name}}</option>
+    	{{/languages}}
+    </select>
+    </div>
+    <div class="field">
+    <label>Category</label>
+    <select class="ui dropdown" name="category" required>
+        <option value="{{script.category.id}}" selected>{{script.category.name}}</option>
+    	{{#categorys}}
+    	<option value="{{id}}">{{name}}</option>
+    	{{/categorys}}
+    </select>
+    </div>
+  <div class="ui buttons">
+  <button class="ui button">Cancel</button>
+  <div class="or"></div>
+  <button class="ui positive button" type="submit">Validate</button>
+</div>
+</form>
+{{> footer}}

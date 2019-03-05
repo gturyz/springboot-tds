@@ -1,0 +1,54 @@
+{{> header}}
+<a class="ui button" href="/logout">Déconnexion</a>
+
+<h1>Bonjour {{user.identity}}</h1>
+
+<div class="ui card">
+  <div class="image">
+    <img src="/images/avatar2/large/kristy.png">
+  </div>
+  <div class="content">
+    <a class="header">{{user.identity}}</a>
+    <div class="description">
+    </div>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="user icon"></i>
+      {{user.email}}
+    </a>
+  </div>
+</div>
+<a href="script/new"><button class="ui green secondary button">
+  + Nouveau script
+</button></a>
+<table class="ui stripped table">
+  <thead>
+    <tr><th>Title</th>
+    <th>Description</th>
+    <th>Content</th>
+    <th>Creation date</th>
+    <th>Language</th>
+    <th></th>
+  </tr></thead>
+  <tbody>
+  {{#scripts}}
+    <tr>
+      <td data-label="Name">{{title}}</td>
+      <td data-label="Name">{{description}}</td>
+      <td data-label="Name">{{content}}</td>
+      <td data-label="Name">{{creation}}</td>
+      <td data-label="Name"><a class="ui red tag label">{{language.name}}</a></td>
+		<td style="text-align:center">
+		<a href="script/{{id}}"><button class="circular basic ui icon button">
+			<i class="edit icon"></i>
+		</button></a>
+		<a href="script/delete/{{id}}"><button class="circular basic red ui icon button">
+			<i class="close icon"></i>
+		</button> </a>
+	</td>
+	</tr>
+    {{/scripts}}
+  </tbody>
+</table>
+{{> footer}}

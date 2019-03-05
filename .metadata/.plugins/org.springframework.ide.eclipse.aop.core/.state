@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
 <aop-project name="backend"/>
+<aop-project name="gestion-script"/>
 <aop-project name="td3"/>
-<aop-project name="td2"/>
 <aop-project name="td5"/>
 </aop-reference-model>
